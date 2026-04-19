@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creekview Garden Apartment — Pwani Stays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1a1c;--deep:#122529;--ocean:#1b4f5a;--teal:#2a8c9e;--tide:#4db8c8;
+  --sand:#e9e0cf;--sand-pale:#f4f0e8;--gold:#c8a84b;--white:#fafaf7;--off:#f2ede4;
+  --mid:#6b7a7c;--dim:#9aabac;--coral:#d4614a;--green:#25d366;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:rgba(13,26,28,.95);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-pill{background:var(--gold);color:var(--ink);font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border-radius:2px;text-decoration:none;transition:.2s}
+.nav-pill:hover{background:#dbbe5e}
+.back-link{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:13px;font-weight:500;text-decoration:none;transition:color .2s}
+.back-link:hover{color:var(--white)}
+
+/* PAGE WRAPPER */
+.page{padding-top:72px}
+
+/* BREADCRUMB */
+.breadcrumb{padding:16px 56px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mid);border-bottom:1px solid rgba(0,0,0,.06);background:var(--off)}
+.breadcrumb a{color:var(--mid);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--ink)}
+.breadcrumb span{opacity:.4}
+
+/* GALLERY */
+.gallery-section{background:var(--ink);padding:32px 56px}
+.gallery-hero{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:320px 200px;gap:6px;border-radius:6px;overflow:hidden;max-height:526px}
+.gallery-main{grid-row:1/3;position:relative;overflow:hidden;cursor:pointer}
+.gallery-thumb{position:relative;overflow:hidden;cursor:pointer}
+.gallery-thumb:nth-child(2){grid-column:2;grid-row:1}
+.gallery-thumb:nth-child(3){grid-column:2;grid-row:2}
+.g-bg{position:absolute;inset:0;transition:transform .4s ease}
+.gallery-main:hover .g-bg,.gallery-thumb:hover .g-bg{transform:scale(1.04)}
+.ga{background:linear-gradient(135deg,#061820 0%,#0d5060 50%,#1a8090 100%)}
+.gb{background:linear-gradient(135deg,#0a3040 0%,#1b8fa0 100%)}
+.gc{background:linear-gradient(135deg,#0e3540 0%,#2090a0 100%)}
+.gd{background:linear-gradient(135deg,#061020 0%,#0d3060 100%)}
+.ge{background:linear-gradient(135deg,#081828 0%,#164878 100%)}
+.gf{background:linear-gradient(135deg,#102030 0%,#204868 100%)}
+.gg{background:linear-gradient(135deg,#041018 0%,#0a3048 100%)}
+.gh{background:linear-gradient(135deg,#0a1820 0%,#184050 100%)}
+.gi{background:linear-gradient(135deg,#06141c 0%,#102038 100%)}
+.gj{background:linear-gradient(135deg,#081520 0%,#143045 100%)}
+.gk{background:linear-gradient(135deg,#0a2030 0%,#185060 100%)}
+.gl{background:linear-gradient(135deg,#040e18 0%,#0c2840 100%)}
+.g-icon{position:absolute;bottom:16px;left:18px;font-size:32px;opacity:.35;pointer-events:none}
+.g-label{position:absolute;bottom:14px;right:16px;font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);pointer-events:none}
+.gallery-more{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;cursor:pointer;transition:background .2s}
+.gallery-more:hover{background:rgba(0,0,0,.65)}
+.gallery-more-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff}
+.gallery-more-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.gallery-open-btn{position:absolute;bottom:16px;right:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:2px;cursor:pointer;transition:.2s;z-index:2}
+.gallery-open-btn:hover{background:rgba(255,255,255,.2)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-close{position:absolute;top:24px;right:32px;background:none;border:none;color:rgba(255,255,255,.6);font-size:32px;cursor:pointer;transition:color .2s;line-height:1}
+.lb-close:hover{color:#fff}
+.lb-main{width:min(860px,90vw);aspect-ratio:16/10;position:relative;border-radius:4px;overflow:hidden}
+.lb-bg{position:absolute;inset:0;transition:opacity .3s}
+.lb-icon{position:absolute;bottom:24px;left:28px;font-size:40px;opacity:.3}
+.lb-label{position:absolute;bottom:22px;right:24px;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.lb-nav{display:flex;align-items:center;gap:24px;margin-top:20px}
+.lb-prev,.lb-next{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.2)}
+.lb-counter{font-family:'Syne',sans-serif;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.1em;min-width:60px;text-align:center}
+.lb-thumbs{display:flex;gap:8px;margin-top:16px;overflow-x:auto;max-width:min(860px,90vw);padding-bottom:4px}
+.lb-thumb{width:64px;height:44px;position:relative;border-radius:3px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.2s;flex-shrink:0}
+.lb-thumb.active{border-color:var(--gold)}
+.lb-thumb-bg{position:absolute;inset:0}
+
+/* MAIN CONTENT */
+.detail-wrap{display:grid;grid-template-columns:1fr 380px;gap:48px;padding:48px 56px;align-items:start}
+.detail-left{}
+
+/* PROPERTY HEADER */
+.prop-kicker{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.prop-kicker::before{content:'';display:block;width:16px;height:1px;background:var(--teal)}
+.prop-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-bottom:12px}
+.prop-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.prop-loc{font-size:14px;color:var(--mid);display:flex;align-items:center;gap:6px}
+.prop-badge{font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:2px}
+.prop-badge.featured{background:var(--gold);color:var(--ink)}
+.prop-badge.airbnb{background:var(--coral);color:#fff}
+.prop-badge.verified{background:rgba(42,140,158,.15);border:1px solid rgba(42,140,158,.3);color:var(--teal)}
+
+/* AMENITIES GRID */
+.amenities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px}
+.am-tile{background:var(--off);border-radius:4px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.am-icon{font-size:20px}
+.am-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:var(--ink)}
+.am-val{font-size:11px;color:var(--mid)}
+
+/* DESCRIPTION */
+.desc-head{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.desc-head::before{content:'';display:block;width:14px;height:1px;background:var(--teal)}
+.desc-text{font-size:15px;line-height:1.8;color:var(--mid);font-weight:300;margin-bottom:32px}
+.desc-text strong{color:var(--ink);font-weight:500}
+
+/* FEATURES LIST */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:36px}
+.feat-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mid)}
+.feat-check{width:18px;height:18px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;flex-shrink:0}
+
+/* TABS */
+.detail-tabs{display:flex;border-bottom:2px solid rgba(0,0,0,.07);margin-bottom:28px;gap:0}
+.dtab{padding:12px 24px;border:none;background:transparent;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);cursor:pointer;transition:.2s;border-bottom:2px solid transparent;margin-bottom:-2px}
+.dtab.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* RULES / LOCATION PANELS */
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.rules-list{display:flex;flex-direction:column;gap:10px}
+.rule-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);line-height:1.5}
+.rule-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:5px;flex-shrink:0}
+.map-placeholder{background:var(--off);border-radius:4px;height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;border:1px solid rgba(0,0,0,.06)}
+.map-ph-icon{font-size:32px;opacity:.3}
+.map-ph-text{font-size:13px;color:var(--mid)}
+.map-ph-link{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);text-decoration:none;margin-top:6px}
+.map-ph-link:hover{color:var(--ocean)}
+
+/* STICKY SIDEBAR */
+.detail-right{position:sticky;top:90px}
+.booking-card{background:var(--white);border:1px solid rgba(0,0,0,.09);border-radius:6px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,.08)}
+.bc-head{padding:24px 28px;background:var(--ink);display:flex;align-items:flex-end;justify-content:space-between}
+.bc-price{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--white)}
+.bc-price sub{font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:300;color:var(--dim);vertical-align:baseline}
+.bc-type-badge{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px;background:rgba(200,168,75,.15);color:var(--gold);border:1px solid rgba(200,168,75,.2)}
+.bc-body{padding:24px 28px}
+.bc-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px}
+.bc-row:last-of-type{border-bottom:none}
+.bc-label{color:var(--mid)}
+.bc-val{font-weight:500;color:var(--ink)}
+.bc-val.green{color:#25d366}
+.bc-divider{height:1px;background:rgba(0,0,0,.06);margin:4px 0 16px}
+.bc-actions{display:flex;flex-direction:column;gap:10px;padding:0 28px 24px}
+.btn-wa-full{display:flex;align-items:center;justify-content:center;gap:10px;background:#25d366;color:#fff;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px;border-radius:3px;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+.btn-wa-full:hover{background:#1db954}
+.btn-outline-full{display:flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--ink);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:13px;border-radius:3px;border:1.5px solid rgba(0,0,0,.12);cursor:pointer;transition:.2s;text-decoration:none}
+.btn-outline-full:hover{border-color:var(--ink)}
+.bc-note{text-align:center;font-size:11px;color:var(--dim);padding:0 28px 20px;line-height:1.6}
+
+/* HOST CARD */
+.host-card{background:var(--off);border-radius:4px;padding:20px;margin-top:16px;display:flex;align-items:center;gap:16px}
+.host-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--ocean),var(--teal));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.host-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.host-tag{font-size:11px;color:var(--mid)}
+.host-resp{font-size:10px;color:var(--teal);font-family:'Syne',sans-serif;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+
+/* SIMILAR LISTINGS */
+.similar{padding:48px 56px;background:var(--off);border-top:1px solid rgba(0,0,0,.06)}
+.similar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.sim-card{background:var(--white);border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;text-decoration:none;color:inherit;display:block}
+.sim-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.09)}
+.sim-thumb{height:140px;position:relative;overflow:hidden}
+.sim-thumb-bg{position:absolute;inset:0;transition:transform .4s}
+.sim-card:hover .sim-thumb-bg{transform:scale(1.05)}
+.sim-icon{position:absolute;bottom:10px;left:12px;font-size:20px;opacity:.4}
+.sim-badge{position:absolute;top:10px;left:10px;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:2px}
+.sim-badge.red{background:var(--coral);color:#fff}
+.sim-badge.blue{background:var(--teal);color:#fff}
+.sim-body{padding:14px 16px}
+.sim-cat{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.sim-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.2}
+.sim-foot{display:flex;align-items:center;justify-content:space-between}
+.sim-price{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink)}
+.sim-price sub{font-family:'Instrument Sans',sans-serif;font-size:10px;font-weight:400;color:var(--mid)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:56px 56px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
+.f-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:.1em;color:var(--white);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.f-tagline{font-size:13px;color:var(--dim);line-height:1.7;font-weight:300;margin-bottom:22px;max-width:260px}
+.f-wa{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);color:var(--green);font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:3px;text-decoration:none;transition:.2s}
+.f-wa:hover{background:rgba(37,211,102,.18)}
+.f-col-title{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:18px}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.f-links a{font-size:13px;color:var(--dim);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:var(--white)}
+.footer-bot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.2)}
+.footer-bot a{color:rgba(255,255,255,.2);text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .breadcrumb{padding:12px 20px}
+  .gallery-section{padding:16px 20px}
+  .gallery-hero{grid-template-columns:1fr;grid-template-rows:auto;max-height:none}
+  .gallery-main{grid-row:auto;height:260px}
+  .gallery-thumb{height:160px}
+  .gallery-thumb:nth-child(2),.gallery-thumb:nth-child(3){grid-column:auto;grid-row:auto}
+  .detail-wrap{grid-template-columns:1fr;padding:24px 20px;gap:24px}
+  .detail-right{position:static}
+  .amenities-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:1fr}
+  .similar{padding:36px 20px}
+  .similar-grid{grid-template-columns:1fr}
+  footer{padding:40px 20px 24px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-bot{flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="pwani-stays.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="pwani-stays.html#listings">Browse</a></li>
+      <li><a href="pwani-stays.html#how">How It Works</a></li>
+      <li><a href="list-property.html">List Property</a></li>
+    </ul>
+    <a href="https://wa.me/254700000000" target="_blank" class="nav-pill">WhatsApp Us</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="pwani-stays.html">Pwani Stays</a>
+    <span>›</span>
+    <a href="pwani-stays.html#listings">Listings</a>
+    <span>›</span>
+    <span style="color:var(--ink)">Creekview Garden Apartment</span>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery-section">
+    <div class="gallery-hero">
+      <!-- Main large image -->
+      <div class="gallery-main" onclick="openLightbox(0)">
+        <div class="g-bg ga"></div>
+        <div class="g-icon">🌊</div>
+        <div class="g-label">Living Area</div>
+        <button class="gallery-open-btn" onclick="openLightbox(0)">⊞ View all 12 photos</button>
+      </div>
+      <!-- Thumb 2 -->
+      <div class="gallery-thumb" onclick="openLightbox(1)">
+        <div class="g-bg gb"></div>
+        <div class="g-icon">🛏</div>
+        <div class="g-label">Bedroom</div>
+      </div>
+      <!-- Thumb 3 — shows "+N more" overlay -->
+      <div class="gallery-thumb" onclick="openLightbox(2)" style="position:relative">
+        <div class="g-bg gc"></div>
+        <div class="g-icon">🚿</div>
+        <div class="g-label">Bathroom</div>
+        <div class="gallery-more" onclick="openLightbox(2)">
+          <div class="gallery-more-num">+9</div>
+          <div class="gallery-more-label">more photos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX (full gallery) -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+    <button class="lb-close" onclick="closeLightbox()">×</button>
+    <div class="lb-main">
+      <div class="lb-bg ga" id="lbBg"></div>
+      <div class="lb-icon" id="lbIcon">🌊</div>
+      <div class="lb-label" id="lbLabel">Living Area</div>
+    </div>
+    <div class="lb-nav">
+      <button class="lb-prev" onclick="lbMove(-1)">‹</button>
+      <div class="lb-counter" id="lbCounter">1 / 12</div>
+      <button class="lb-next" onclick="lbMove(1)">›</button>
+    </div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="detail-wrap">
+    <div class="detail-left">
+
+      <div class="reveal">
+        <div class="prop-kicker">Airbnb · Mtwapa Creek</div>
+        <h1 class="prop-title">Creekview Garden Apartment</h1>
+        <div class="prop-meta">
+          <div class="prop-loc">📍 Mtwapa Creek Road, Mtwapa</div>
+          <span class="prop-badge featured">⭐ Featured</span>
+          <span class="prop-badge airbnb">Airbnb</span>
+          <span class="prop-badge verified">✓ Verified</span>
+        </div>
+      </div>
+
+      <!-- AMENITIES -->
+      <div class="amenities-grid reveal">
+        <div class="am-tile"><div class="am-icon">🛏</div><div class="am-label">Bedrooms</div><div class="am-val">2 Beds</div></div>
+        <div class="am-tile"><div class="am-icon">🚿</div><div class="am-label">Bathrooms</div><div class="am-val">1 Bath</div></div>
+        <div class="am-tile"><div class="am-icon">👥</div><div class="am-label">Guests</div><div class="am-val">Up to 4</div></div>
+        <div class="am-tile"><div class="am-icon">📐</div><div class="am-label">Size</div><div class="am-val">65 m²</div></div>
+        <div class="am-tile"><div class="am-icon">📶</div><div class="am-label">WiFi</div><div class="am-val">Fibre 20Mbps</div></div>
+        <div class="am-tile"><div class="am-icon">🅿</div><div class="am-label">Parking</div><div class="am-val">1 space</div></div>
+        <div class="am-tile"><div class="am-icon">💧</div><div class="am-label">Water</div><div class="am-val">24hr supply</div></div>
+        <div class="am-tile"><div class="am-icon">🔒</div><div class="am-label">Security</div><div class="am-val">Gated compound</div></div>
+      </div>
+
+      <!-- TABS -->
+      <div class="detail-tabs reveal">
+        <button class="dtab on" onclick="switchTab('desc',this)">Description</button>
+        <button class="dtab" onclick="switchTab('features',this)">Features</button>
+        <button class="dtab" onclick="switchTab('rules',this)">House Rules</button>
+        <button class="dtab" onclick="switchTab('location',this)">Location</button>
+      </div>
+
+      <div class="tab-panel on" id="tab-desc">
+        <div class="desc-head">About this property</div>
+        <p class="desc-text">
+          <strong>Creekview Garden Apartment</strong> is a bright, airy two-bedroom unit sitting right along the lush Mtwapa Creek corridor. The apartment opens onto a private garden terrace where you can watch dhows drift past in the early morning light — a genuinely rare find on the coast.<br><br>
+          The living space is fully furnished with a kitchenette, a comfortable sofa set and a ceiling fan in each room. The kitchen is equipped for self-catering; nearby shops and <em>mama mbogas</em> are a 5-minute walk. Both bedrooms face the garden, keeping the rooms cool through natural ventilation even in the hottest months.<br><br>
+          Perfect for couples, small families or solo travellers wanting a quiet alternative to Mombasa's busier hotel strip. The host responds via WhatsApp within the hour.
+        </p>
+      </div>
+
+      <div class="tab-panel" id="tab-features">
+        <div class="desc-head">What's included</div>
+        <div class="features-grid">
+          <div class="feat-item"><div class="feat-check">✓</div>Fully furnished & equipped kitchen</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Fibre WiFi (20 Mbps)</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Smart TV with Netflix</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Hot water shower</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Ceiling fans in all rooms</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Private parking bay</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Garden terrace access</div>
+          <div class="feat-item"><div class="feat-check">✓</div>24hr water supply</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Gated & guarded compound</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Mpesa accepted</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Weekly cleaning included</div>
+          <div class="feat-item"><div class="feat-check">✓</div>Towels & bedding provided</div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-rules">
+        <div class="desc-head">House Rules</div>
+        <div class="rules-list">
+          <div class="rule-item"><div class="rule-dot"></div>Check-in from 2:00 PM, check-out by 11:00 AM</div>
+          <div class="rule-item"><div class="rule-dot"></div>No smoking inside the apartment or on the terrace</div>
+          <div class="rule-item"><div class="rule-dot"></div>Pets not allowed in the unit</div>
+          <div class="rule-item"><div class="rule-dot"></div>No loud music or parties after 10:00 PM</div>
+          <div class="rule-item"><div class="rule-dot"></div>Maximum 4 guests (additional guests charged at Ksh 500/night)</div>
+          <div class="rule-item"><div class="rule-dot"></div>A refundable security deposit of Ksh 5,000 is required on check-in</div>
+          <div class="rule-item"><div class="rule-dot"></div>Payment via Mpesa before or on check-in</div>
+          <div class="rule-item"><div class="rule-dot"></div>Report any damages within 2 hours of check-in</div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-location">
+        <div class="desc-head">Location</div>
+        <div class="map-placeholder">
+          <div class="map-ph-icon">📍</div>
+          <div class="map-ph-text">Mtwapa Creek Road, Mtwapa, Kilifi County</div>
+          <a href="https://maps.google.com/?q=Mtwapa+Creek+Road+Mtwapa" target="_blank" class="map-ph-link">Open in Google Maps →</a>
+        </div>
+        <div style="margin-top:20px">
+          <div class="desc-head">Nearby</div>
+          <div class="features-grid" style="margin-top:12px">
+            <div class="feat-item"><div class="feat-check">📍</div>Mtwapa Town Centre — 3 min</div>
+            <div class="feat-item"><div class="feat-check">🏖</div>Mtwapa Beach — 8 min walk</div>
+            <div class="feat-item"><div class="feat-check">🛒</div>Supermarket — 5 min walk</div>
+            <div class="feat-item"><div class="feat-check">🚌</div>Matatu stage — 2 min walk</div>
+            <div class="feat-item"><div class="feat-check">🏥</div>Mtwapa Health Centre — 6 min</div>
+            <div class="feat-item"><div class="feat-check">✈</div>Moi Airport — 35 min drive</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STICKY SIDEBAR -->
+    <div class="detail-right reveal">
+      <div class="booking-card">
+        <div class="bc-head">
+          <div class="bc-price">Ksh 5,500 <sub>/night</sub></div>
+          <span class="bc-type-badge">Airbnb</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-row"><span class="bc-label">Minimum stay</span><span class="bc-val">1 night</span></div>
+          <div class="bc-row"><span class="bc-label">Check-in</span><span class="bc-val">2:00 PM</span></div>
+          <div class="bc-row"><span class="bc-label">Check-out</span><span class="bc-val">11:00 AM</span></div>
+          <div class="bc-row"><span class="bc-label">Max guests</span><span class="bc-val">4 people</span></div>
+          <div class="bc-row"><span class="bc-label">Agent fee</span><span class="bc-val green">Ksh 0</span></div>
+          <div class="bc-row"><span class="bc-label">Payment</span><span class="bc-val">Mpesa</span></div>
+          <div class="bc-row"><span class="bc-label">Availability</span><span class="bc-val green">● Available now</span></div>
+        </div>
+        <div class="bc-divider"></div>
+        <div class="bc-actions">
+          <a href="https://wa.me/254700000000?text=Hi%2C%20I'd%20like%20to%20book%20Creekview%20Garden%20Apartment%20on%20Pwani%20Stays.%20When%20is%20it%20available%3F" target="_blank" class="btn-wa-full">💬 WhatsApp to Book</a>
+          <a href="https://wa.me/254700000000?text=Hi%2C%20I%20have%20a%20question%20about%20Creekview%20Garden%20Apartment" target="_blank" class="btn-outline-full">Ask a Question</a>
+        </div>
+        <div class="bc-note">Contact the host directly. No booking fees. Pay with Mpesa on check-in.</div>
+      </div>
+
+      <!-- HOST CARD -->
+      <div class="host-card">
+        <div class="host-avatar">🧑</div>
+        <div>
+          <div class="host-name">Ali Mwangi</div>
+          <div class="host-tag">Verified landlord · Mtwapa</div>
+          <div class="host-resp">Replies within 1 hour</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIMILAR LISTINGS -->
+  <div class="similar">
+    <div style="padding:0">
+      <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:10px"><span style="display:block;width:16px;height:1px;background:var(--teal)"></span>You may also like</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-.02em">Similar <em style="font-style:italic;font-weight:400;color:var(--teal)">stays</em></h2>
+    </div>
+    <div class="similar-grid">
+      <a class="sim-card" href="property-detail.html?id=6">
+        <div class="sim-thumb"><div class="sim-thumb-bg cg6a"></div><div class="sim-icon">🌊</div><div class="sim-badge red">Airbnb</div></div>
+        <div class="sim-body"><div class="sim-cat">Airbnb · Shanzu Beach</div><div class="sim-name">Shanzu Oceanfront Suite</div><div class="sim-foot"><div class="sim-price">Ksh 7,500 <sub>/night</sub></div></div></div>
+      </a>
+      <a class="sim-card" href="property-detail.html?id=3">
+        <div class="sim-thumb"><div class="sim-thumb-bg cg3a"></div><div class="sim-icon">🌴</div><div class="sim-badge red">Airbnb</div></div>
+        <div class="sim-body"><div class="sim-cat">Airbnb · Kikambala</div><div class="sim-name">Kikambala Beach Cottage</div><div class="sim-foot"><div class="sim-price">Ksh 9,000 <sub>/night</sub></div></div></div>
+      </a>
+      <a class="sim-card" href="property-detail.html?id=4">
+        <div class="sim-thumb"><div class="sim-thumb-bg cg4a"></div><div class="sim-icon">🏬</div><div class="sim-badge blue">Furnished</div></div>
+        <div class="sim-body"><div class="sim-cat">Furnished · Mtwapa Town</div><div class="sim-name">Mtwapa Executive 1BR</div><div class="sim-foot"><div class="sim-price">Ksh 20,000 <sub>/month</sub></div></div></div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-logo"><div class="logo-dot"></div> PWANI STAYS</div>
+      <div class="f-tagline">Coast Kenya's trusted rental platform. From bedsitters in Mtwapa to beachfront stays in Kikambala.</div>
+      <a href="https://wa.me/254700000000" target="_blank" class="f-wa">💬 WhatsApp Us</a>
+    </div>
+    <div><div class="f-col-title">Browse</div><ul class="f-links"><li><a href="pwani-stays.html#listings">All Listings</a></li><li><a href="#">Airbnbs</a></li><li><a href="#">Long-term</a></li><li><a href="#">Furnished</a></li></ul></div>
+    <div><div class="f-col-title">Locations</div><ul class="f-links"><li><a href="#">Mtwapa Town</a></li><li><a href="#">Shanzu</a></li><li><a href="#">Kikambala</a></li><li><a href="#">Jumba</a></li></ul></div>
+    <div><div class="f-col-title">Landlords</div><ul class="f-links"><li><a href="list-property.html">List a Property</a></li><li><a href="#">Pricing</a></li><li><a href="#">Get Verified</a></li></ul></div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 Pwani Stays · Mtwapa, Kilifi County</span>
+    <div style="display:flex;gap:20px"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+// LIGHTBOX DATA
+const slides = [
+  {bg:'ga',icon:'🌊',label:'Living Area'},{bg:'gb',icon:'🛏',label:'Bedroom 1'},
+  {bg:'gc',icon:'🚿',label:'Bathroom'},{bg:'gd',icon:'🍳',label:'Kitchen'},
+  {bg:'ge',icon:'🛏',label:'Bedroom 2'},{bg:'gf',icon:'🌿',label:'Garden Terrace'},
+  {bg:'gg',icon:'🌅',label:'Morning View'},{bg:'gh',icon:'🚪',label:'Entrance'},
+  {bg:'gi',icon:'📺',label:'Lounge'},{bg:'gj',icon:'🪴',label:'Balcony'},
+  {bg:'gk',icon:'🔒',label:'Gate & Compound'},{bg:'gl',icon:'🅿',label:'Parking'}
+];
+let lbCur = 0;
+
+function buildThumbs() {
+  const c = document.getElementById('lbThumbs');
+  c.innerHTML = slides.map((s,i) => `<div class="lb-thumb${i===0?' active':''}" onclick="lbGo(${i})"><div class="lb-thumb-bg ${s.bg}"></div></div>`).join('');
+}
+function openLightbox(idx) {
+  lbCur = idx;
+  buildThumbs();
+  lbUpdate();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLightboxOutside(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+function lbUpdate() {
+  const s = slides[lbCur];
+  document.getElementById('lbBg').className = `lb-bg ${s.bg}`;
+  document.getElementById('lbIcon').textContent = s.icon;
+  document.getElementById('lbLabel').textContent = s.label;
+  document.getElementById('lbCounter').textContent = `${lbCur+1} / ${slides.length}`;
+  document.querySelectorAll('.lb-thumb').forEach((t,i) => t.classList.toggle('active', i===lbCur));
+  // scroll thumb into view
+  const thumb = document.querySelectorAll('.lb-thumb')[lbCur];
+  if (thumb) thumb.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+function lbMove(dir) {
+  lbCur = (lbCur + dir + slides.length) % slides.length;
+  lbUpdate();
+}
+function lbGo(i) { lbCur = i; lbUpdate(); }
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') lbMove(1);
+  if (e.key === 'ArrowLeft') lbMove(-1);
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// DETAIL TABS
+function switchTab(id, btn) {
+  document.querySelectorAll('.dtab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('tab-'+id).classList.add('on');
+}
+
+// REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCIrpXZocQMxkJ47mdAkhXLWuhnX0EXexo",
+    authDomain: "pwani-stays.firebaseapp.com",
+    projectId: "pwani-stays",
+    storageBucket: "pwani-stays.firebasestorage.app",
+    messagingSenderId: "520272196704",
+    appId: "1:520272196704:web:f9d78dfac255080e91ff05",
+    measurementId: "G-R1SD8CBKLZ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
