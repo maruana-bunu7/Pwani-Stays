@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>List Your Property — Pwani Stays Kenya Coast</title>
-<meta name="description" content="List your rental property or Airbnb on Pwani Stays. Free for 30 days. Direct WhatsApp enquiries. No agent commission.">
+<title>About Pwani Stays — Kenya Coast Rental Platform</title>
+<meta name="description" content="Pwani Stays is a verified rental listing platform serving Mtwapa, Shanzu and Kikambala. No agents, no commission. Direct landlord contact.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://pwanistays.co.ke/list-property.html">
-<meta property="og:title" content="List Your Property — Pwani Stays Kenya Coast">
-<meta property="og:description" content="List your rental property or Airbnb on Pwani Stays. Free for 30 days. Direct WhatsApp enquiries. No agent commission.">
-<meta property="og:url" content="https://pwanistays.co.ke/list-property.html">
+<link rel="canonical" href="https://pwanistays.co.ke/about.html">
+<meta property="og:title" content="About Pwani Stays — Kenya Coast Rental Platform">
+<meta property="og:description" content="Pwani Stays is a verified rental listing platform serving Mtwapa, Shanzu and Kikambala. No agents, no commission. Direct landlord contact.">
+<meta property="og:url" content="https://pwanistays.co.ke/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pwani Stays">
 
@@ -153,15 +153,7 @@ footer{background:var(--ink);padding:56px 56px 32px}
   .ad-wrap{padding:16px 24px}
   .search-bar{flex-direction:column}
 }
-.lp-form{display:flex;flex-direction:column;gap:18px;max-width:640px}
-.lp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.lp-field{display:flex;flex-direction:column;gap:5px}
-.lp-field label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
-.lp-field input,.lp-field select,.lp-field textarea{border:1px solid rgba(0,0,0,.14);border-radius:3px;padding:12px 14px;font-family:'Instrument Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;width:100%}
-.lp-field input:focus,.lp-field select:focus,.lp-field textarea:focus{border-color:var(--teal)}
-.lp-field textarea{resize:vertical;min-height:100px}
-.lp-sub{background:var(--gold);color:var(--ink);border:none;border-radius:3px;padding:15px 32px;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background-color .2s}
-.lp-sub:hover{background:#dbbe5e}</style>
+</style>
 </head>
 <body><div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
   <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
@@ -176,78 +168,40 @@ footer{background:var(--ink);padding:56px 56px 32px}
 <nav id="nav" class="solid">
   <a href="index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
   <div class="nav-right">
-    <ul class="nav-links"><li><a href="listings.html">Browse</a></li><li><a href="blog.html">Blog</a></li><li><a href="list-property.html" class="active">List Property</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <ul class="nav-links"><li><a href="listings.html">Browse</a></li><li><a href="blog.html">Blog</a></li><li><a href="list-property.html">List Property</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html">Contact</a></li></ul>
     <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
     <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="page-hero">
-  <div class="page-kicker">For Landlords</div>
-  <h1 class="page-h1">List your <em>Property</em></h1>
-  <p class="page-desc">Fill in the form and your listing goes live within 24 hours. Free for the first 30 days.</p>
+  <div class="page-kicker">Our Story</div>
+  <h1 class="page-h1">About <em>Pwani Stays</em></h1>
+  <p class="page-desc">Built on the Kenya Coast to fix a simple problem: too many fake listings, too many agents taking fees, and no easy way to find a verified place to rent.</p>
 </div>
-<section style="padding:64px 56px;background:var(--off)">
-  <div style="display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:start">
+<section style="padding:80px 56px;background:var(--off)">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
     <div>
-      <div class="section-label">Submit your listing</div>
-      <h2 class="section-h2" style="margin-bottom:28px">Property <em>Details</em></h2>
-      <form class="lp-form" onsubmit="submitListing(event)">
-        <div class="lp-row">
-          <div class="lp-field"><label>Your Name *</label><input type="text" placeholder="e.g. John Kamau" required></div>
-          <div class="lp-field"><label>WhatsApp Number *</label><input type="tel" placeholder="e.g. 0712 345678" required></div>
-        </div>
-        <div class="lp-field"><label>Property Title *</label><input type="text" placeholder="e.g. Creekview 2-Bedroom Apartment" required></div>
-        <div class="lp-row">
-          <div class="lp-field"><label>Location *</label>
-            <select required><option value="">Select area...</option>
-              <option>Mtwapa Town</option><option>Mtwapa Creek Road</option>
-              <option>Shanzu Estate</option><option>Shanzu Beach Road</option>
-              <option>Kikambala</option><option>Jumba la Mtwana</option>
-              <option>Other (describe below)</option>
-            </select>
-          </div>
-          <div class="lp-field"><label>Listing Type *</label>
-            <select required><option value="">Select type...</option>
-              <option>Long-term Rental</option><option>Airbnb / Short Stay</option>
-              <option>Furnished Monthly</option>
-            </select>
-          </div>
-        </div>
-        <div class="lp-row">
-          <div class="lp-field"><label>Price (Ksh) *</label><input type="number" placeholder="e.g. 8000" required></div>
-          <div class="lp-field"><label>Bedrooms</label>
-            <select><option>Bedsitter / Studio</option><option>1 Bedroom</option>
-              <option>2 Bedrooms</option><option>3 Bedrooms</option><option>4+ Bedrooms</option>
-            </select>
-          </div>
-        </div>
-        <div class="lp-field"><label>Description</label><textarea placeholder="Tell renters about the property — what's included, condition, surroundings, who it suits..."></textarea></div>
-        <div class="lp-field"><label>Key Amenities</label><input type="text" placeholder="e.g. WiFi, Parking, Water, Security, Furnished"></div>
-        <div class="lp-field"><label>Preferred Package</label>
-          <select><option>Basic — Free (30-day free trial)</option>
-            <option>Standard — Ksh 700/month</option><option>Featured — Ksh 1,500/month</option>
-            <option>Verified Badge — Ksh 2,500 one-time</option>
-          </select>
-        </div>
-        <button type="submit" class="lp-sub" id="lpBtn">&#x1F4E4; Submit Listing</button>
-        <p style="font-size:12px;color:var(--dim)">We review all submissions within 24 hours. You'll receive a WhatsApp confirmation when your listing goes live.</p>
-      </form>
+      <div class="section-label">Why we built this</div>
+      <h2 class="section-h2" style="margin-bottom:24px">The problem we <em>solved</em></h2>
+      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px">Anyone who has tried to rent on the Kenya Coast knows the frustration. WhatsApp groups full of outdated listings. Agents charging a month's rent in commission. Properties that look nothing like the photos.</p>
+      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px">Pwani Stays was built to cut through that. Every listing is verified — we physically visit, confirm and photograph each property before it goes live. Every contact goes directly to the landlord's WhatsApp.</p>
+      <p style="font-size:15px;color:var(--mid);line-height:1.8">We focus on Mtwapa, Shanzu and Kikambala — an area we know and care about deeply.</p>
     </div>
-    <div style="position:sticky;top:90px;display:flex;flex-direction:column;gap:14px">
-      <div style="background:var(--white);border-radius:4px;padding:22px;border-left:3px solid var(--gold)">
-        <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Free for 30 days</div>
-        <p style="font-size:14px;color:var(--mid);line-height:1.7">No credit card. No commitment. After the first month, choose a plan from Ksh 700/month.</p>
-      </div>
-      <div style="background:var(--white);border-radius:4px;padding:22px;border-left:3px solid var(--teal)">
-        <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:8px">Direct to your WhatsApp</div>
-        <p style="font-size:14px;color:var(--mid);line-height:1.7">Every enquiry goes directly to the number you provide. No middlemen, no delays.</p>
-      </div>
-      <div style="background:var(--white);border-radius:4px;padding:22px;border-left:3px solid var(--coral)">
-        <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:8px">Prefer WhatsApp instead?</div>
-        <p style="font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:10px">Skip the form and message us your property details directly.</p>
-        <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%2C%20I%20want%20to%20list%20my%20property" target="_blank" rel="noopener noreferrer" class="btn-dark" style="font-size:11px;padding:10px 18px">&#x1F4AC; WhatsApp Us</a>
-      </div>
-      <a href="pricing.html" style="text-align:center;font-size:13px;color:var(--teal);text-decoration:none;padding:6px">View full pricing &#8594;</a>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--teal)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">120+</div><div style="font-size:13px;color:var(--mid)">Active verified listings</div></div>
+      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--gold)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">80+</div><div style="font-size:13px;color:var(--mid)">Landlords and hosts listed</div></div>
+      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--coral)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">Ksh 0</div><div style="font-size:13px;color:var(--mid)">Agent commission charged to renters</div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:80px 56px;background:var(--white)">
+  <div style="max-width:680px;margin:0 auto">
+    <div class="section-label">Values</div>
+    <h2 class="section-h2" style="margin-bottom:36px">What we <em>stand for</em></h2>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#128269;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Verification First</div><div style="font-size:14px;color:var(--mid);line-height:1.7">Every listing is physically checked before going live. We confirm the property exists and the landlord is contactable.</div></div></div>
+      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#x1F4AC;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Direct Contact Always</div><div style="font-size:14px;color:var(--mid);line-height:1.7">Renters go straight to the landlord via WhatsApp. No middleman, no gatekeeper, no commission.</div></div></div>
+      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#x1F1F0;&#x1F1EA;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Built for the Kenya Coast</div><div style="font-size:14px;color:var(--mid);line-height:1.7">We focus on Mtwapa, Shanzu and Kikambala because we know the area and provide genuinely local insight.</div></div></div>
     </div>
   </div>
 </section><footer>
@@ -288,16 +242,6 @@ footer{background:var(--ink);padding:56px 56px 32px}
 </footer><script>
 function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
 function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
-function submitListing(e){
-  e.preventDefault();
-  const btn=document.getElementById('lpBtn');
-  btn.textContent='&#x2713; Submitted!';btn.style.background='var(--teal)';btn.style.color='#fff';btn.disabled=true;
-  setTimeout(()=>{
-    btn.textContent='&#x1F4AC; Continue on WhatsApp';btn.style.background='#25d366';
-    btn.onclick=()=>window.open('https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%2C%20I%20just%20submitted%20a%20listing%20on%20Pwani%20Stays','_blank');
-    btn.disabled=false;
-  },1500);
-}
 const _obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');_obs.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
 </script>
