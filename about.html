@@ -4,23 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Pwani Stays — Kenya Coast Rental Platform</title>
-<meta name="description" content="Pwani Stays is a verified rental listing platform serving Mtwapa, Shanzu and Kikambala. No agents, no commission. Direct landlord contact.">
+<meta name="description" content="Pwani Stays is a verified rental listing platform built on the Kenya Coast. Serving Mtwapa, Shanzu and Kikambala with zero agent fees and direct landlord contact.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pwanistays.co.ke/about.html">
 <meta property="og:title" content="About Pwani Stays — Kenya Coast Rental Platform">
-<meta property="og:description" content="Pwani Stays is a verified rental listing platform serving Mtwapa, Shanzu and Kikambala. No agents, no commission. Direct landlord contact.">
+<meta property="og:description" content="Pwani Stays is a verified rental listing platform built on the Kenya Coast. No agents, no commission, direct landlord contact via WhatsApp.">
 <meta property="og:url" content="https://pwanistays.co.ke/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pwani Stays">
-
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="pwani-stays-icon.svg">
+<link rel="shortcut icon" href="pwani-stays-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0d1a1c;--deep:#122529;--ocean:#1b4f5a;--teal:#2a8c9e;--tide:#4db8c8;--sand:#e9e0cf;--sand-pale:#f4f0e8;--gold:#c8a84b;--white:#fafaf7;--off:#f2ede4;--mid:#6b7a7c;--dim:#9aabac;--coral:#d4614a;--green:#25d366}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Instrument Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;line-height:1.65}
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;transition:all .4s}
-nav.solid{background:rgba(13,26,28,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.06)}
-nav.stuck{background:rgba(13,26,28,.95);backdrop-filter:blur(24px);padding:14px 56px;border-bottom:1px solid rgba(255,255,255,.06)}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;transition:all .4s;background:rgba(13,26,28,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.06)}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
 .logo-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0}
 .nav-right{display:flex;align-items:center;gap:32px}
@@ -31,105 +32,74 @@ nav.stuck{background:rgba(13,26,28,.95);backdrop-filter:blur(24px);padding:14px 
 .nav-pill:hover{background:#dbbe5e}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px}
-.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:32px}
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-decoration:none}
-.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;line-height:1}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);backdrop-filter:blur(16px);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transform:translateY(-12px);transition:opacity .3s ease,transform .3s ease}
+.mobile-nav.open{display:flex;animation:mnavIn .3s ease forwards}
+@keyframes mnavIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,transform .15s}
+.mobile-nav a:hover{color:var(--white);transform:translateX(4px)}
+.mobile-nav-close{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--white);font-size:18px;cursor:pointer;line-height:1;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background-color .2s}
+.mobile-nav-close:hover{background:rgba(255,255,255,.15)}
 .section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .section-label::before{content:'';display:block;width:20px;height:1px;background:currentColor}
 .section-h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.02em}
 .section-h2 em{font-style:italic;font-weight:400;color:var(--teal)}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;gap:20px;flex-wrap:wrap}
 .btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--white);font-family:'Syne',sans-serif;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:background-color .2s}
 .btn-dark:hover{background:var(--ocean)}
 .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);font-family:'Syne',sans-serif;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:background-color .2s}
 .btn-gold:hover{background:#dbbe5e}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--ink);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:13px 28px;border-radius:3px;text-decoration:none;border:1.5px solid rgba(0,0,0,.2);cursor:pointer;transition:border-color .2s}
-.btn-ghost:hover{border-color:var(--ink)}
-.btn-ghost.light{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.25)}
-.btn-ghost.light:hover{color:var(--white);border-color:var(--white)}
 .page-hero{background:var(--deep);padding:140px 56px 72px;position:relative;overflow:hidden}
-.page-hero::after{content:'';position:absolute;right:-5%;bottom:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(43,140,158,.12) 0%,transparent 70%);pointer-events:none}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(43,140,158,.08) 0%,transparent 65%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;right:-5%;bottom:-20%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,.07) 0%,transparent 70%);pointer-events:none}
 .page-kicker{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
 .page-kicker::before{content:'';display:block;width:24px;height:1px;background:var(--gold);opacity:.6}
 .page-h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,64px);font-weight:900;line-height:1.05;color:var(--white);letter-spacing:-.02em;margin-bottom:16px}
 .page-h1 em{font-style:italic;font-weight:400;color:var(--gold)}
-.page-desc{font-size:15px;color:var(--dim);line-height:1.75;font-weight:300;max-width:620px;margin-top:8px}
-.page-meta{font-size:13px;color:var(--dim);display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dim);margin-bottom:20px;flex-wrap:wrap}
-.breadcrumb a{color:var(--dim);text-decoration:none;transition:color .2s}.breadcrumb a:hover{color:var(--white)}.breadcrumb span{opacity:.4}
-.ad-slot{background:var(--sand-pale);border:1px dashed rgba(0,0,0,.12);border-radius:4px;display:flex;align-items:center;justify-content:center;min-height:90px;color:var(--mid);font-size:11px;font-family:'Syne',sans-serif;letter-spacing:.1em;text-transform:uppercase}
-.ad-wrap{padding:20px 56px}
-.l-grid{display:flex;flex-direction:column;gap:14px}
-.l-card{background:var(--white);border-radius:4px;overflow:hidden;display:flex;flex-direction:row;cursor:pointer;position:relative;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;text-decoration:none;color:inherit}
-.l-card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
-.l-card.pinned{border:1.5px solid var(--gold)}.l-card.hidden{display:none}
-.l-thumb{width:260px;flex-shrink:0;position:relative;overflow:hidden}
-.carousel{width:100%;height:100%;position:relative;overflow:hidden}
-.carousel-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.carousel-slide{min-width:100%;height:100%;position:relative;flex-shrink:0}
-.cs-bg{position:absolute;inset:0}.cs-icon{position:absolute;bottom:12px;left:14px;font-size:26px;opacity:.4;pointer-events:none}
-.cs-scene-label{position:absolute;bottom:12px;right:12px;font-family:'Syne',sans-serif;font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);pointer-events:none}
-.cg1a{background:linear-gradient(135deg,#0a2a30,#1a7080)}.cg1b{background:linear-gradient(135deg,#0e3540,#2090a0)}.cg1c{background:linear-gradient(135deg,#061820,#0d5060)}
-.cg2a{background:linear-gradient(135deg,#1a2a08,#3a7020)}.cg2b{background:linear-gradient(135deg,#0d1a04,#2a5818)}.cg2c{background:linear-gradient(135deg,#203010,#4a8030)}
-.cg3a{background:linear-gradient(135deg,#3a1808,#a04828)}.cg3b{background:linear-gradient(135deg,#2a1000,#803820)}.cg3c{background:linear-gradient(135deg,#401808,#c05030)}
-.cg4a{background:linear-gradient(135deg,#08182a,#1a4878)}.cg4b{background:linear-gradient(135deg,#040c18,#123060)}.cg4c{background:linear-gradient(135deg,#0c2040,#204888)}
-.cg5a{background:linear-gradient(135deg,#2a1a00,#a07818)}.cg5b{background:linear-gradient(135deg,#1a1000,#806010)}.cg5c{background:linear-gradient(135deg,#302000,#c09020)}
-.cg6a{background:linear-gradient(135deg,#001a1a,#107070)}.cg6b{background:linear-gradient(135deg,#001010,#085858)}.cg6c{background:linear-gradient(135deg,#002020,#189090)}
-.carousel-prev,.carousel-next{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(0,0,0,.5);border:none;border-radius:50%;color:#fff;font-size:12px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;backdrop-filter:blur(4px)}
-.l-thumb:hover .carousel-prev,.l-thumb:hover .carousel-next{opacity:1}
-.carousel-prev{left:8px}.carousel-next{right:8px}
-.carousel-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:5}
-.carousel-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);transition:background-color .2s,width .2s}
-.carousel-dot.active{background:rgba(255,255,255,.9);width:12px;border-radius:2px}
-.l-badge{position:absolute;top:12px;left:12px;font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px;z-index:6}
-.l-badge.gold{background:var(--gold);color:var(--ink)}.l-badge.red{background:var(--coral);color:#fff}.l-badge.teal{background:var(--teal);color:#fff}
-.l-fav{position:absolute;top:10px;right:10px;width:30px;height:30px;background:rgba(255,255,255,.9);border:none;border-radius:50%;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:7;transition:background-color .2s,transform .2s}
-.l-fav:hover{background:#fff;transform:scale(1.1)}
-.gallery-count{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.6);color:#fff;font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:2px;z-index:6;backdrop-filter:blur(4px)}
-.l-body{flex:1;min-width:0;padding:18px 24px;display:flex;flex-direction:column;justify-content:space-between}
-.l-cat{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
-.l-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.l-loc{font-size:12px;color:var(--mid);margin-bottom:2px}
-.l-amenities{display:flex;gap:14px;flex-wrap:nowrap;overflow:hidden;margin-top:8px}
-.l-am{font-size:11px;color:var(--mid);display:flex;align-items:center;gap:4px;white-space:nowrap}
-.l-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(0,0,0,.06);margin-top:auto}
-.l-price{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink)}
-.l-price sub{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:400;color:var(--mid);vertical-align:baseline}
-.l-actions{display:flex;gap:8px;align-items:center}
-.l-view{display:flex;align-items:center;gap:6px;background:transparent;color:var(--teal);border:1.5px solid var(--teal);border-radius:2px;padding:8px 14px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background-color .2s,color .2s;text-decoration:none}
-.l-view:hover{background:var(--teal);color:#fff}
-.l-wa{display:flex;align-items:center;gap:6px;background:var(--ink);color:var(--white);border:none;border-radius:2px;padding:9px 14px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background-color .2s;text-decoration:none}
-.l-wa:hover{background:var(--ocean)}
-.filter-empty{text-align:center;padding:60px 24px;display:none}.filter-empty.show{display:block}
-.filter-empty-icon{font-size:40px;margin-bottom:12px;opacity:.4}
-.filter-empty-text{font-family:'Playfair Display',serif;font-size:20px;color:var(--mid);font-style:italic;margin-bottom:8px}
-.filter-empty-sub{font-size:13px;color:var(--dim)}
-.tabs{display:flex;gap:4px;background:rgba(0,0,0,.06);padding:4px;border-radius:10px;flex-shrink:0}
-.tab{padding:9px 18px;border:none;border-radius:7px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background-color .2s,color .2s,box-shadow .2s;background:transparent;color:var(--mid)}
-.tab.on{background:var(--ink);color:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.18)}
-.search-bar{display:flex;gap:10px;background:var(--white);border:1px solid rgba(0,0,0,.08);border-radius:4px;padding:16px 20px;margin-bottom:28px;flex-wrap:wrap;align-items:flex-end}
-.sb-field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:160px}
-.sb-field label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}
-.sb-field select,.sb-field input{border:1px solid rgba(0,0,0,.12);border-radius:3px;padding:10px 14px;font-family:'Instrument Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;width:100%}
-.sb-field select:focus,.sb-field input:focus{border-color:var(--teal)}
-.sb-go{background:var(--ink);color:var(--white);border:none;border-radius:3px;padding:11px 24px;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background-color .2s;white-space:nowrap}
-.sb-go:hover{background:var(--ocean)}
-.search-results-label{font-size:12px;color:var(--mid);margin-bottom:16px;font-style:italic}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.b-card{background:var(--off);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
-.b-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
-.b-thumb{height:180px;position:relative;overflow:hidden}
-.bt-1{background:linear-gradient(135deg,#0a3040,#1b8fa0)}.bt-2{background:linear-gradient(135deg,#1a2a10,#3a6a20)}.bt-3{background:linear-gradient(135deg,#2a1a00,#a07818)}.bt-4{background:linear-gradient(135deg,#0a1a30,#1a408a)}
-.b-thumb-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:48px;opacity:.35}
-.b-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--ink);font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px}
-.b-tag.teal{background:var(--teal);color:#fff}.b-tag.coral{background:var(--coral);color:#fff}
-.b-body{padding:24px;flex:1;display:flex;flex-direction:column}
-.b-meta{font-size:11px;color:var(--dim);margin-bottom:10px;display:flex;gap:8px}
-.b-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:10px}
-.b-excerpt{font-size:13px;color:var(--mid);line-height:1.7;flex:1}
-.b-read{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
-footer{background:var(--ink);padding:56px 56px 32px}
+.page-desc{font-size:16px;color:var(--dim);line-height:1.8;font-weight:300;max-width:640px;margin-top:8px}
+.stat-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.08);margin-top:56px}
+.stat-item{padding:28px 0 28px 0;border-right:1px solid rgba(255,255,255,.08)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--white);line-height:1;margin-bottom:6px}
+.stat-num span{font-size:24px;color:var(--gold)}
+.stat-label{font-size:12px;color:var(--dim);font-weight:300;letter-spacing:.02em}
+.origin-section{padding:80px 56px;background:var(--off)}
+.origin-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;max-width:1200px;margin:0 auto}
+.origin-text p{font-size:16px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-weight:300}
+.origin-text p strong{color:var(--ink);font-weight:600}
+.origin-aside{display:flex;flex-direction:column;gap:14px;padding-top:12px}
+.aside-card{background:var(--white);border-radius:4px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;border-left:3px solid transparent}
+.aside-card.teal{border-left-color:var(--teal)}
+.aside-card.gold{border-left-color:var(--gold)}
+.aside-card.coral{border-left-color:var(--coral)}
+.aside-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.aside-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.02em}
+.aside-text{font-size:13px;color:var(--mid);line-height:1.65;font-weight:300}
+.values-section{padding:80px 56px;background:var(--white)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;max-width:1200px;margin-left:auto;margin-right:auto}
+.value-card{background:var(--off);border-radius:4px;padding:32px 28px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.value-emoji{font-size:30px;margin-bottom:16px}
+.value-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.02em}
+.value-text{font-size:14px;color:var(--mid);line-height:1.75;font-weight:300}
+.area-section{padding:80px 56px;background:var(--deep)}
+.area-intro{text-align:center;max-width:640px;margin:0 auto 52px}
+.area-intro .section-label{justify-content:center}
+.area-intro .section-h2{color:var(--white);margin-bottom:14px}
+.area-intro .section-h2 em{color:var(--gold)}
+.area-intro p{font-size:15px;color:var(--dim);line-height:1.75;font-weight:300}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.area-card{border-radius:4px;padding:32px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:border-color .3s,background .3s}
+.area-card:hover{border-color:rgba(200,168,75,.3);background:rgba(255,255,255,.07)}
+.area-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px}
+.area-sub{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.area-desc{font-size:14px;color:var(--dim);line-height:1.75;font-weight:300;margin-bottom:16px}
+.area-tags{display:flex;flex-wrap:wrap;gap:6px}
+.area-tag{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.5)}
+.cta-section{padding:80px 56px;background:var(--ink);text-align:center}
+.cta-section .section-h2{color:var(--white);margin-bottom:16px}
+.cta-section .section-h2 em{color:var(--gold)}
+.cta-section p{font-size:15px;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75;font-weight:300}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:56px 56px 32px}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
 .f-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;letter-spacing:.1em;color:var(--white);display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .f-tagline{font-size:13px;color:var(--dim);line-height:1.7;font-weight:300;margin-bottom:22px;max-width:260px}
@@ -142,74 +112,219 @@ footer{background:var(--ink);padding:56px 56px 32px}
 .footer-bot a{color:rgba(255,255,255,.2);text-decoration:none}.footer-bot a:hover{color:rgba(255,255,255,.4)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
+#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--ink);color:var(--white);border:none;border-radius:50%;font-size:22px;cursor:pointer;z-index:800;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background-color .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+#btt.show{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--teal)}
 @media(max-width:900px){
   nav{padding:18px 24px}.nav-links,.nav-pill{display:none}.hamburger{display:flex}
   .page-hero{padding:120px 24px 56px}
-  .l-card{flex-direction:column}.l-thumb{width:100%;height:200px}
-  .blog-grid{grid-template-columns:1fr}
+  .stat-bar{grid-template-columns:1fr 1fr}
+  .stat-item:nth-child(3){border-right:none;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;grid-column:span 2}
+  .origin-inner{grid-template-columns:1fr;gap:40px}
+  .values-grid{grid-template-columns:1fr;gap:14px}
+  .area-grid{grid-template-columns:1fr;gap:14px}
+  .area-section,.values-section,.origin-section,.cta-section{padding:56px 24px}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
   .footer-bot{flex-direction:column;text-align:center}
-  .section-head{flex-direction:column;align-items:flex-start}
-  .ad-wrap{padding:16px 24px}
-  .search-bar{flex-direction:column}
+  .cta-btns{flex-direction:column;align-items:center}
 }
 </style>
 </head>
-<body><div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
-  <a href="index.html">Home</a>
-  <a href="listings.html">Browse</a>
-  <a href="blog.html">Blog</a>
-  <a href="list-property.html">List Property</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp Us</a>
+<body>
+
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&#x2715;</button>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="listings.html" onclick="closeMobileNav()">Browse Listings</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="list-property.html" onclick="closeMobileNav()">List Property</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  <a href="faq.html" onclick="closeMobileNav()">FAQ</a>
+  <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp Us</a>
 </div>
-<nav id="nav" class="solid">
+
+<nav id="nav">
   <a href="index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
   <div class="nav-right">
-    <ul class="nav-links"><li><a href="listings.html">Browse</a></li><li><a href="blog.html">Blog</a></li><li><a href="list-property.html">List Property</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html">Contact</a></li></ul>
-    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
-    <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="listings.html">Browse</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="list-property.html">List Property</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- HERO -->
 <div class="page-hero">
   <div class="page-kicker">Our Story</div>
-  <h1 class="page-h1">About <em>Pwani Stays</em></h1>
-  <p class="page-desc">Built on the Kenya Coast to fix a simple problem: too many fake listings, too many agents taking fees, and no easy way to find a verified place to rent.</p>
-</div>
-<section style="padding:80px 56px;background:var(--off)">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
-    <div>
-      <div class="section-label">Why we built this</div>
-      <h2 class="section-h2" style="margin-bottom:24px">The problem we <em>solved</em></h2>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px">Anyone who has tried to rent on the Kenya Coast knows the frustration. WhatsApp groups full of outdated listings. Agents charging a month's rent in commission. Properties that look nothing like the photos.</p>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:16px">Pwani Stays was built to cut through that. Every listing is verified — we physically visit, confirm and photograph each property before it goes live. Every contact goes directly to the landlord's WhatsApp.</p>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8">We focus on Mtwapa, Shanzu and Kikambala — an area we know and care about deeply.</p>
+  <h1 class="page-h1">Built on the <em>Coast</em>,<br>for the Coast</h1>
+  <p class="page-desc">Pwani Stays started with one simple frustration: finding a decent rental on the Kenya Coast was harder than it should be. Too many fake listings, too many agents, too many dead WhatsApp numbers. So we built something better.</p>
+  <div class="stat-bar">
+    <div class="stat-item">
+      <div class="stat-num">6<span>+</span></div>
+      <div class="stat-label">Verified properties live</div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--teal)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">120+</div><div style="font-size:13px;color:var(--mid)">Active verified listings</div></div>
-      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--gold)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">80+</div><div style="font-size:13px;color:var(--mid)">Landlords and hosts listed</div></div>
-      <div class="reveal" style="background:var(--white);border-radius:4px;padding:24px;border-left:3px solid var(--coral)"><div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--ink);margin-bottom:4px">Ksh 0</div><div style="font-size:13px;color:var(--mid)">Agent commission charged to renters</div></div>
+    <div class="stat-item" style="padding-left:40px">
+      <div class="stat-num">Ksh <span>0</span></div>
+      <div class="stat-label">Agent fees charged to renters</div>
+    </div>
+    <div class="stat-item" style="padding-left:40px">
+      <div class="stat-num">3<span></span></div>
+      <div class="stat-label">Coastal areas covered — Mtwapa, Shanzu, Kikambala</div>
+    </div>
+  </div>
+</div>
+
+<!-- ORIGIN STORY -->
+<section class="origin-section">
+  <div class="origin-inner">
+    <div class="origin-text">
+      <div class="section-label">Why we exist</div>
+      <h2 class="section-h2" style="margin-bottom:28px">The problem we <em>solved</em></h2>
+      <p>If you have ever tried to find a house to rent in Mtwapa, you know the drill. You join a WhatsApp group. Half the listings are months old. You call a number — it is an agent asking for a viewing fee before you have even seen the gate. You find something promising on Facebook, send a deposit, and the landlord disappears.</p>
+      <p><strong>Pwani Stays was built to cut through all of that.</strong> Every listing goes through a manual verification step before it goes live. We confirm the property is real, the landlord is reachable, and the details match what is advertised. No ghosts. No fakes.</p>
+      <p>From there, it is simple: tenants contact landlords <strong>directly on WhatsApp</strong>. No middleman. No commission taken from either side. The deal happens between the two people it should happen between.</p>
+      <p>We started with Mtwapa, Shanzu and Kikambala because that is the stretch of coast we know best — where hotel workers, teachers, NGO staff, and visitors are constantly looking for somewhere good to stay. We plan to grow, but we will not sacrifice verification quality to do it fast.</p>
+    </div>
+    <div class="origin-aside">
+      <div class="aside-card teal reveal">
+        <div class="aside-icon">&#128269;</div>
+        <div>
+          <div class="aside-title">Every listing is physically verified</div>
+          <div class="aside-text">Before any property goes live, we confirm it exists, matches the description, and the landlord is genuinely contactable. No exceptions.</div>
+        </div>
+      </div>
+      <div class="aside-card gold reveal">
+        <div class="aside-icon">&#x1F4AC;</div>
+        <div>
+          <div class="aside-title">Direct contact — always</div>
+          <div class="aside-text">Every WhatsApp button goes straight to the landlord or host. We do not intercept, we do not charge a finder's fee. You deal directly.</div>
+        </div>
+      </div>
+      <div class="aside-card coral reveal">
+        <div class="aside-icon">&#x1F1F0;&#x1F1EA;</div>
+        <div>
+          <div class="aside-title">Local, not algorithmic</div>
+          <div class="aside-text">We are not a national platform trying to scale. We are focused on this specific stretch of coast and the specific needs of people who live and stay here.</div>
+        </div>
+      </div>
+      <div class="aside-card teal reveal" style="border-left-color:var(--mid)">
+        <div class="aside-icon">&#x1F4B3;</div>
+        <div>
+          <div class="aside-title">Mpesa-friendly by design</div>
+          <div class="aside-text">Everything is built around how Kenya Coast actually works — WhatsApp conversations, Mpesa payments, and landlords who expect to talk, not fill in forms.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<section style="padding:80px 56px;background:var(--white)">
-  <div style="max-width:680px;margin:0 auto">
-    <div class="section-label">Values</div>
-    <h2 class="section-h2" style="margin-bottom:36px">What we <em>stand for</em></h2>
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#128269;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Verification First</div><div style="font-size:14px;color:var(--mid);line-height:1.7">Every listing is physically checked before going live. We confirm the property exists and the landlord is contactable.</div></div></div>
-      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#x1F4AC;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Direct Contact Always</div><div style="font-size:14px;color:var(--mid);line-height:1.7">Renters go straight to the landlord via WhatsApp. No middleman, no gatekeeper, no commission.</div></div></div>
-      <div class="reveal" style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px;background:var(--off);border-radius:4px"><div style="font-size:24px">&#x1F1F0;&#x1F1EA;</div><div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px">Built for the Kenya Coast</div><div style="font-size:14px;color:var(--mid);line-height:1.7">We focus on Mtwapa, Shanzu and Kikambala because we know the area and provide genuinely local insight.</div></div></div>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label">What drives us</div>
+    <h2 class="section-h2" style="margin-bottom:0">What we <em>stand for</em></h2>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-emoji">&#9989;</div>
+        <div class="value-title">Verification over volume</div>
+        <div class="value-text">We would rather have six real, confirmed listings than sixty unverified ones. Every property on Pwani Stays has been checked. That is the only promise that matters in this market.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-emoji">&#x1F91D;</div>
+        <div class="value-title">No extraction, no friction</div>
+        <div class="value-text">Renters pay nothing to use this platform. Landlords get a free 30-day trial. We charge only for premium placement — and that is optional. The transaction always stays between the two people involved.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-emoji">&#x1F50D;</div>
+        <div class="value-title">Transparency by default</div>
+        <div class="value-text">Prices are shown upfront. Amenities are listed honestly. If a property has a known issue or limitation, we say so. We are more useful to you as a source of truth than as a sales channel.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-emoji">&#128640;</div>
+        <div class="value-title">Built to grow with landlords</div>
+        <div class="value-text">Many landlords on the Coast are renting for the first time and do not know how to present their property online. We help with that — photos, descriptions, pricing guidance — so listings actually convert.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-emoji">&#127968;</div>
+        <div class="value-title">Community first</div>
+        <div class="value-text">Mtwapa, Shanzu and Kikambala are not just markets to us. They are communities with real people looking for stable housing and fair deals. We want to make those deals easier and safer.</div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-emoji">&#128241;</div>
+        <div class="value-title">Mobile-first, coast-aware</div>
+        <div class="value-text">Most people browsing here are on a phone, possibly with variable data. We design for that — fast pages, WhatsApp-first contact, and no unnecessary steps between you and a landlord.</div>
+      </div>
     </div>
   </div>
-</section><footer>
+</section>
+
+<!-- AREAS WE COVER -->
+<section class="area-section">
+  <div class="area-intro">
+    <div class="section-label">Where we operate</div>
+    <h2 class="section-h2">The areas we <em>know</em></h2>
+    <p style="margin-top:12px">We focus on three neighbouring areas along the Kenya North Coast — each with its own character, price range, and community.</p>
+  </div>
+  <div class="area-grid">
+    <div class="area-card reveal">
+      <div class="area-name">Mtwapa</div>
+      <div class="area-sub">Kilifi County · Most listings</div>
+      <div class="area-desc">The commercial heart of the North Coast. Good transport links to Mombasa, a busy town centre, and a wide range of rental options from bedsitters to furnished 2-bedrooms. Popular with hotel and hospitality workers.</div>
+      <div class="area-tags">
+        <span class="area-tag">Bedsitters</span>
+        <span class="area-tag">1BR &amp; 2BR</span>
+        <span class="area-tag">Furnished</span>
+        <span class="area-tag">Budget-friendly</span>
+      </div>
+    </div>
+    <div class="area-card reveal">
+      <div class="area-name">Shanzu</div>
+      <div class="area-sub">Kilifi County · Ocean access</div>
+      <div class="area-desc">A quieter, more residential area with ocean access and a growing number of holiday lets and Airbnbs. Favoured by expats, remote workers, and tourists wanting a more laid-back base than central Mombasa.</div>
+      <div class="area-tags">
+        <span class="area-tag">Airbnb</span>
+        <span class="area-tag">Ocean views</span>
+        <span class="area-tag">Studios</span>
+        <span class="area-tag">Long-term</span>
+      </div>
+    </div>
+    <div class="area-card reveal">
+      <div class="area-name">Kikambala</div>
+      <div class="area-sub">Kilifi County · Beach cottages</div>
+      <div class="area-desc">Further north and more exclusive. Known for beach cottages, resort-adjacent stays, and a peaceful environment away from town noise. Suits visitors and longer holiday rentals more than short-stay workers.</div>
+      <div class="area-tags">
+        <span class="area-tag">Beach cottages</span>
+        <span class="area-tag">Holiday lets</span>
+        <span class="area-tag">Premium</span>
+        <span class="area-tag">Quiet</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-label" style="justify-content:center">Get started</div>
+  <h2 class="section-h2">Ready to find your <em>place</em>?</h2>
+  <p>Browse verified listings now, or contact us on WhatsApp if you have something specific in mind that is not listed yet.</p>
+  <div class="cta-btns">
+    <a href="listings.html" class="btn-gold">Browse All Listings</a>
+    <a href="https://wa.me/254796338276?text=Hi%2C%20I%27m%20looking%20for%20a%20rental%20on%20the%20Kenya%20Coast" target="_blank" rel="noopener noreferrer" class="btn-dark">&#x1F4AC; Chat on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
   <div class="footer-top">
     <div>
       <div class="f-logo"><div class="logo-dot"></div>PWANI STAYS</div>
       <p class="f-tagline">Coast Kenya's trusted rental platform. From bedsitters in Mtwapa to beachfront stays in Kikambala.</p>
-      <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
+      <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
     </div>
     <div><div class="f-col-title">Browse</div><ul class="f-links">
       <li><a href="listings.html">All Listings</a></li>
@@ -239,9 +354,15 @@ footer{background:var(--ink);padding:56px 56px 32px}
       <a href="blog.html">Blog</a>
     </div>
   </div>
-</footer><script>
-function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
-function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8679;</button>
+
+<script>
+function openMobileNav(){var n=document.getElementById('mobileNav');n.style.display='flex';requestAnimationFrame(function(){n.classList.add('open')});document.body.style.overflow='hidden';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','true');}
+function closeMobileNav(){var n=document.getElementById('mobileNav');n.classList.remove('open');setTimeout(function(){n.style.display='none'},300);document.body.style.overflow='';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','false');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav();});
+window.addEventListener('scroll',function(){var b=document.getElementById('btt');if(b){b.classList.toggle('show',window.scrollY>400);}});
 const _obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');_obs.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
 </script>

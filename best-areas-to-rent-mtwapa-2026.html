@@ -27,10 +27,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .nav-pill:hover{background:#dbbe5e}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px}
-.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:32px}
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-decoration:none}
-.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;line-height:1}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);backdrop-filter:blur(16px);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transform:translateY(-12px);transition:opacity .3s ease,transform .3s ease}
+.mobile-nav.open{display:flex;animation:mnavIn .3s ease forwards}
+@keyframes mnavIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,transform .15s}
+.mobile-nav a:hover{color:var(--white);transform:translateX(4px)}
+.mobile-nav-close{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--white);font-size:18px;cursor:pointer;line-height:1;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background-color .2s}
+.mobile-nav-close:hover{background:rgba(255,255,255,.15)}
 .section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .section-label::before{content:'';display:block;width:20px;height:1px;background:currentColor}
 .section-h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.02em}
@@ -96,34 +99,41 @@ footer{background:var(--ink);padding:48px 56px 28px}
   .footer-bot{flex-direction:column;text-align:center}
   .ad-wrap{padding:14px 24px}
 }
+
+#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--ink);color:var(--white);border:none;border-radius:50%;font-size:22px;cursor:pointer;z-index:800;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background-color .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+#btt.show{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--teal)}
 </style>
+<link rel="icon" type="image/svg+xml" href="pwani-stays-icon.svg">
+<link rel="shortcut icon" href="pwani-stays-icon.svg">
 </head>
-<body><div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
-  <a href="../index.html">Home</a>
-  <a href="../listings.html">Browse</a>
-  <a href="../blog.html">Blog</a>
-  <a href="../list-property.html">List Property</a>
-  <a href="../about.html">About</a>
-  <a href="../contact.html">Contact</a>
-  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp</a>
+<body><div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&#x2715;</button>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="listings.html" onclick="closeMobileNav()">Browse Listings</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="list-property.html" onclick="closeMobileNav()">List Property</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  <a href="faq.html" onclick="closeMobileNav()">FAQ</a>
+  <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp Us</a>
 </div>
 <nav>
-  <a href="../index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
+  <a href="index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="../listings.html">Browse</a></li>
-      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="../list-property.html">List Property</a></li>
       <li><a href="../about.html">About</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
+    <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
     <button class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="page-hero">
-  <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span style="color:rgba(255,255,255,.6)">Renter Guide</span></div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Blog</a><span>/</span><span style="color:rgba(255,255,255,.6)">Renter Guide</span></div>
   <div class="page-kicker">Renter Guide</div>
   <h1 class="page-h1">Best Areas to Rent in Mtwapa in 2026</h1>
   <div class="page-meta">
@@ -132,10 +142,58 @@ footer{background:var(--ink);padding:48px 56px 28px}
   </div>
 </div>
 <div class="article-body">
-  <p>If you're planning to move to Mtwapa, the hardest part isn't finding a listing — it's knowing <em>which part</em> of Mtwapa to live in. The town covers a large area and different pockets suit very different lifestyles and budgets.</p>
+<p>The Kenya North Coast is not one rental market — it is several, each with a different price range, vibe, and type of tenant. If you are trying to find somewhere to rent in Mtwapa and the surrounding areas in 2026, knowing which neighbourhood suits your situation can save you weeks of searching.</p>
+
+<h2>Mtwapa Town Centre</h2>
+<h3>Best for: workers, budget renters, daily commuters</h3>
+<p>The town centre is the most affordable part of Mtwapa and the easiest to move around without a vehicle. Bedsitters here typically rent between <strong>Ksh 4,000 and Ksh 7,000 per month</strong>, and a decent one-bedroom goes from Ksh 7,000 upwards. The trade-off is noise and density — this is a commercial area, and it shows. Matatu access to Mombasa CBD is excellent, making it popular with people who commute daily for work.</p>
+<p>Most units here are no-frills: you get water, electricity, and a roof. Some compounds have security guards; most do not have parking. If you work in hospitality or retail and want low rent and easy transport, the town centre delivers.</p>
+
+<div class="callout">&#128270; <strong>What to watch for:</strong> Many town centre listings get shared on WhatsApp groups without verification. Ask to see the actual unit before paying anything — photos shared in groups are often years old or from a completely different property.</div>
+
 <h2>Mtwapa Creek Road</h2>
-<p>The most scenic and sought-after location in Mtwapa. Properties here sit overlooking or near the creek, with views of mangroves and fishing boats. It attracts Airbnb guests, expats and middle-income tenants. Expect to pay a premium — 2-bedroom apartments start from Ksh 18,000/month or Ksh 5,000/night for Airbnbs.</p>
-<div class="callout">Best for: expats, remote workers, holiday guests, couples. Less ideal for: people who need quick matatu access into Mombasa.</div>
+<h3>Best for: Airbnb guests, couples, people wanting nature nearby</h3>
+<p>Creek Road runs along the edge of Mtwapa Creek and is one of the most scenic areas to stay on the North Coast. Properties here range from small studios to larger apartments, many with creek or mangrove views. It is popular for Airbnb stays — you will find nightly rates from around <strong>Ksh 3,500 to Ksh 7,000</strong> for a well-kept unit.</p>
+<p>Long-term rents are higher here than in town — expect to pay Ksh 10,000 to Ksh 18,000 for a one-bedroom with decent finishes. The area is quieter than the town centre and has a more residential feel. Access to the main road is easy enough, but you will want a boda boda or tuk-tuk for daily errands.</p>
+
+<h2>Shanzu Estate</h2>
+<h3>Best for: long-term tenants, families, NGO and teaching staff</h3>
+<p>Shanzu Estate is a well-established residential area between Mtwapa and Bamburi. It is calmer than Mtwapa town, with a mix of standalone houses and apartment blocks. One-bedroom units rent from around <strong>Ksh 8,000 to Ksh 14,000</strong> per month, and two-bedrooms from Ksh 14,000 upwards.</p>
+<p>The area is popular with teachers at the nearby international schools and staff from NGOs operating along the coast. It has better road conditions than some parts of Mtwapa and decent supermarket access. The downside is that it lacks the walkable density of Mtwapa town — you will likely need transport for most daily tasks.</p>
+
+<h2>Shanzu Beach Road</h2>
+<h3>Best for: holiday lets, ocean lovers, remote workers</h3>
+<p>Get closer to the ocean and prices go up sharply. Shanzu Beach Road properties with sea access or ocean views command a significant premium. Airbnb nightly rates here start around <strong>Ksh 5,500</strong> and can reach Ksh 15,000 for a well-positioned unit. Long-term monthly rents for ocean-adjacent properties typically start around Ksh 20,000.</p>
+<p>This stretch is ideal for someone working remotely who wants a coastal lifestyle, or for holiday lets targeting tourists. The beach access is the main draw — without it, the road itself is not particularly convenient for daily life.</p>
+
+<h2>Kikambala</h2>
+<h3>Best for: holiday cottages, longer stays, privacy</h3>
+<p>Kikambala sits further north and is the most exclusive of the three areas. It is primarily a holiday destination — most rentals here are cottages and bungalows aimed at weekend and holiday visitors rather than permanent tenants. Nightly rates for a beach cottage range from <strong>Ksh 7,000 to Ksh 20,000</strong> depending on size and proximity to the beach.</p>
+<p>It is quiet, private, and genuinely beautiful — but it is not practical as a base for someone who needs regular access to Mombasa or who wants daily amenities nearby. Best suited to getaway stays of three nights or more.</p>
+
+<h2>Quick comparison table</h2>
+<div style="overflow-x:auto;margin:20px 0">
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+  <thead><tr style="background:var(--off)">
+    <th style="padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)">Area</th>
+    <th style="padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)">Best for</th>
+    <th style="padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)">1BR from</th>
+    <th style="padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)">Transport</th>
+  </tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:12px 14px;color:var(--ink);font-weight:600">Mtwapa Town</td><td style="padding:12px 14px;color:var(--mid)">Workers, budget</td><td style="padding:12px 14px;color:var(--teal);font-weight:600">Ksh 7,000</td><td style="padding:12px 14px;color:var(--mid)">Excellent</td></tr>
+    <tr style="border-bottom:1px solid rgba(0,0,0,.06);background:var(--off)"><td style="padding:12px 14px;color:var(--ink);font-weight:600">Creek Road</td><td style="padding:12px 14px;color:var(--mid)">Airbnb, couples</td><td style="padding:12px 14px;color:var(--teal);font-weight:600">Ksh 10,000</td><td style="padding:12px 14px;color:var(--mid)">Good</td></tr>
+    <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:12px 14px;color:var(--ink);font-weight:600">Shanzu Estate</td><td style="padding:12px 14px;color:var(--mid)">Families, staff</td><td style="padding:12px 14px;color:var(--teal);font-weight:600">Ksh 8,000</td><td style="padding:12px 14px;color:var(--mid)">Good</td></tr>
+    <tr style="border-bottom:1px solid rgba(0,0,0,.06);background:var(--off)"><td style="padding:12px 14px;color:var(--ink);font-weight:600">Shanzu Beach</td><td style="padding:12px 14px;color:var(--mid)">Remote workers, ocean</td><td style="padding:12px 14px;color:var(--teal);font-weight:600">Ksh 20,000</td><td style="padding:12px 14px;color:var(--mid)">Moderate</td></tr>
+    <tr><td style="padding:12px 14px;color:var(--ink);font-weight:600">Kikambala</td><td style="padding:12px 14px;color:var(--mid)">Holiday cottages</td><td style="padding:12px 14px;color:var(--teal);font-weight:600">Ksh 15,000</td><td style="padding:12px 14px;color:var(--mid)">Limited</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>The bottom line</h2>
+<p>If budget and daily practicality are your priority, <strong>Mtwapa Town Centre</strong> wins. If you want a balance of comfort and reasonable rent, <strong>Shanzu Estate</strong> is the most consistent performer. If you want the ocean and do not mind paying for it, <strong>Shanzu Beach Road</strong> or <strong>Kikambala</strong> are worth it — but be realistic about what daily life looks like away from the water.</p>
+<p>All areas have fake listings circulating. Stick to verified platforms, ask to visit before paying, and never send a deposit to someone you have not spoken to directly. <a href="how-to-avoid-fake-listings-mtwapa.html">Read our guide on avoiding fake listings here.</a></p>
+</div></div>
 <h2>Mtwapa Town Centre</h2>
 <p>The busiest, most connected part of Mtwapa. Within walking distance of supermarkets, pharmacies, banks and the main matatu stage. Rents are competitive — bedsitters from Ksh 4,500/month, 1-bedrooms from Ksh 9,000. The trade-off is noise and traffic, especially near the highway junction.</p>
 <div class="callout">Best for: workers, families, people who depend on matatus. Less ideal for: those seeking quiet or a holiday atmosphere.</div>
@@ -184,7 +242,7 @@ footer{background:var(--ink);padding:48px 56px 28px}
     <div>
       <div class="f-logo"><div class="logo-dot"></div>PWANI STAYS</div>
       <p class="f-tagline">Coast Kenya's trusted rental platform.</p>
-      <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
+      <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
     </div>
     <div><div class="f-col-title">Browse</div><ul class="f-links">
       <li><a href="../listings.html">All Listings</a></li>
@@ -198,7 +256,7 @@ footer{background:var(--ink);padding:48px 56px 28px}
     </ul></div>
     <div><div class="f-col-title">Company</div><ul class="f-links">
       <li><a href="../about.html">About</a></li>
-      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="../contact.html">Contact</a></li>
       <li><a href="../privacy-policy.html">Privacy Policy</a></li>
       <li><a href="../terms.html">Terms</a></li>
@@ -209,14 +267,17 @@ footer{background:var(--ink);padding:48px 56px 28px}
     <div style="display:flex;gap:20px">
       <a href="../privacy-policy.html">Privacy</a>
       <a href="../terms.html">Terms</a>
-      <a href="../blog.html">Blog</a>
+      <a href="blog.html">Blog</a>
     </div>
   </div>
 </footer><script>
-function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
-function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+function openMobileNav(){var n=document.getElementById('mobileNav');n.style.display='flex';requestAnimationFrame(function(){n.classList.add('open')});document.body.style.overflow='hidden';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','true');}
+function closeMobileNav(){var n=document.getElementById('mobileNav');n.classList.remove('open');setTimeout(function(){n.style.display='none'},300);document.body.style.overflow='';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','false');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav();});
+window.addEventListener('scroll',function(){var b=document.getElementById('btt');if(b){b.classList.toggle('show',window.scrollY>400);}});
 const _obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');_obs.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
 </script>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8679;</button>
 </body>
 </html>

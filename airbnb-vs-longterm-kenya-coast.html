@@ -27,10 +27,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:cen
 .nav-pill:hover{background:#dbbe5e}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px}
-.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:32px}
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-decoration:none}
-.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;line-height:1}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(13,26,28,.97);backdrop-filter:blur(16px);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transform:translateY(-12px);transition:opacity .3s ease,transform .3s ease}
+.mobile-nav.open{display:flex;animation:mnavIn .3s ease forwards}
+@keyframes mnavIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.mobile-nav a{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,transform .15s}
+.mobile-nav a:hover{color:var(--white);transform:translateX(4px)}
+.mobile-nav-close{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--white);font-size:18px;cursor:pointer;line-height:1;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background-color .2s}
+.mobile-nav-close:hover{background:rgba(255,255,255,.15)}
 .section-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .section-label::before{content:'';display:block;width:20px;height:1px;background:currentColor}
 .section-h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.02em}
@@ -96,34 +99,41 @@ footer{background:var(--ink);padding:48px 56px 28px}
   .footer-bot{flex-direction:column;text-align:center}
   .ad-wrap{padding:14px 24px}
 }
+
+#btt{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--ink);color:var(--white);border:none;border-radius:50%;font-size:22px;cursor:pointer;z-index:800;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background-color .2s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+#btt.show{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--teal)}
 </style>
+<link rel="icon" type="image/svg+xml" href="pwani-stays-icon.svg">
+<link rel="shortcut icon" href="pwani-stays-icon.svg">
 </head>
-<body><div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
-  <a href="../index.html">Home</a>
-  <a href="../listings.html">Browse</a>
-  <a href="../blog.html">Blog</a>
-  <a href="../list-property.html">List Property</a>
-  <a href="../about.html">About</a>
-  <a href="../contact.html">Contact</a>
-  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp</a>
+<body><div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&#x2715;</button>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="listings.html" onclick="closeMobileNav()">Browse Listings</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="list-property.html" onclick="closeMobileNav()">List Property</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  <a href="faq.html" onclick="closeMobileNav()">FAQ</a>
+  <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" style="color:var(--green)">&#x1F4AC; WhatsApp Us</a>
 </div>
 <nav>
-  <a href="../index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
+  <a href="index.html" class="logo"><div class="logo-dot"></div>PWANI STAYS</a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="../listings.html">Browse</a></li>
-      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="../list-property.html">List Property</a></li>
       <li><a href="../about.html">About</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
+    <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="nav-pill">WhatsApp Us</a>
     <button class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="page-hero">
-  <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../blog.html">Blog</a><span>/</span><span style="color:rgba(255,255,255,.6)">Deep Dive</span></div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Blog</a><span>/</span><span style="color:rgba(255,255,255,.6)">Deep Dive</span></div>
   <div class="page-kicker">Deep Dive</div>
   <h1 class="page-h1">Airbnb vs Long-Term Rental: What to Choose on the Kenya Coast</h1>
   <div class="page-meta">
@@ -132,6 +142,39 @@ footer{background:var(--ink);padding:48px 56px 28px}
   </div>
 </div>
 <div class="article-body">
+<p>If you own a property near Mtwapa, Shanzu or Kikambala, you have probably asked yourself whether to put it on Airbnb or rent it long-term. Both options have real advantages. The right answer depends on your property, your availability, and how you want to manage your time.</p>
+
+<h2>The core trade-off</h2>
+<p>Airbnb typically generates higher revenue per night — but it is not passive income. You are running a hospitality operation: cleaning between guests, managing check-ins, responding to queries at odd hours, and keeping the unit stocked with basics. Long-term rental is lower revenue but far lower effort. Once a good tenant is in place and paying, you may go months without needing to do anything.</p>
+<p>Here is the honest breakdown.</p>
+
+<h2>When Airbnb makes more sense</h2>
+<h3>Your property is in a high-demand location</h3>
+<p>Ocean-facing units in Shanzu and Kikambala beach cottages can earn <strong>Ksh 5,000 to Ksh 15,000 per night</strong> on good weeks. Even at 50% occupancy, that beats most long-term rents for the same unit. If your property has a genuinely desirable feature — beach access, a pool, an ocean view, a distinctive design — Airbnb rewards that far more than long-term letting does.</p>
+<h3>You are willing to manage it actively</h3>
+<p>Airbnb success requires responsiveness. Guests message before booking, message on arrival, and review based on the experience. If you are not available to manage this yourself — or cannot afford someone who is — your ratings will suffer and occupancy will drop. Location alone does not make a good Airbnb. Operations do.</p>
+<h3>You want flexibility</h3>
+<p>A long-term tenant has legal protections. Getting them out if you want to use the property yourself, sell it, or renovate is a process. With Airbnb, you simply block the dates. If you want to keep options open, short-term lets give you that.</p>
+
+<div class="callout">&#128200; <strong>Real numbers to consider:</strong> A Kikambala beach cottage at Ksh 9,000/night needs only 4–5 nights booked per month to match a Ksh 38,000 long-term rent. But factor in cleaning costs (Ksh 500–1,500 per turnover), platform fees (Airbnb charges hosts around 3%), and your own time.</div>
+
+<h2>When long-term rental makes more sense</h2>
+<h3>Your property is in a residential area</h3>
+<p>Mtwapa Town Centre and Shanzu Estate are not Airbnb territory. Tourists do not want to stay there — they want beach access. These areas have strong demand from long-term tenants: hotel workers, teachers, NGO staff, government employees. You will get consistent occupancy at predictable rents without the operational overhead of short-term management.</p>
+<h3>You want reliable income without effort</h3>
+<p>A good long-term tenant pays monthly, takes care of minor issues themselves, and usually stays for at least a year. The landlord's role reduces to collecting rent and dealing with significant repairs. For landlords who have full-time jobs or live away from the coast, this is far more sustainable than Airbnb.</p>
+<h3>You are not set up for hospitality</h3>
+<p>Airbnb guests expect a furnished, well-equipped unit with functioning WiFi, clean linen, and a responsive host. If your property is unfurnished, in a compound without reliable water, or in an area with frequent power cuts that you cannot manage remotely — long-term rental sets more realistic expectations and attracts tenants who will adapt to those realities.</p>
+
+<h2>The hybrid option</h2>
+<p>Some landlords on the coast run their properties as Airbnb during the high season (July–August and December–January) and switch to monthly lets in the off-season to ensure consistent income. This is viable if your property is in an area with genuine tourist appeal and you have a management system in place. It is more complex to execute than either pure strategy, but it can maximise annual income on well-located properties.</p>
+
+<h2>What about listing on Pwani Stays?</h2>
+<p>Pwani Stays supports both models. You can list a property for short-term Airbnb enquiries, long-term rental, or furnished monthly stays. All contact goes directly to you on WhatsApp — there is no booking engine taking a percentage of your transaction. You set the terms, you talk to the tenant or guest, you decide. <a href="list-property.html">List your property here.</a></p>
+
+<h2>Bottom line</h2>
+<p><strong>Ocean-facing or beach-adjacent property with active management?</strong> Airbnb will likely earn more. <strong>Residential area, unfurnished, or hands-off landlord?</strong> Long-term rental is more reliable and less stressful. Most landlords on the Kenya Coast who try Airbnb without proper preparation end up switching back to long-term after a few difficult guests. Be honest about which category you fall into before committing.</p>
+</div><div class="article-body">
   <p>You've decided you want to live or spend time on the Kenya Coast. Now the question is: do you go Airbnb short-stay, or commit to a long-term rental? The answer depends on why you're coming, how long for, and what flexibility is worth to you.</p>
 <h2>The Case for Airbnb</h2>
 <p>Airbnbs are ideal if you are on holiday, testing the area before a move, working on a short contract, or want hotel-level convenience without hotel prices. You arrive to a furnished, equipped space with WiFi already set up. The landlord handles maintenance. You leave with no notice period.</p>
@@ -187,7 +230,7 @@ footer{background:var(--ink);padding:48px 56px 28px}
     <div>
       <div class="f-logo"><div class="logo-dot"></div>PWANI STAYS</div>
       <p class="f-tagline">Coast Kenya's trusted rental platform.</p>
-      <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
+      <a href="https://wa.me/254796338276" target="_blank" rel="noopener noreferrer" class="f-wa">&#x1F4AC; WhatsApp Us</a>
     </div>
     <div><div class="f-col-title">Browse</div><ul class="f-links">
       <li><a href="../listings.html">All Listings</a></li>
@@ -201,7 +244,7 @@ footer{background:var(--ink);padding:48px 56px 28px}
     </ul></div>
     <div><div class="f-col-title">Company</div><ul class="f-links">
       <li><a href="../about.html">About</a></li>
-      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="../contact.html">Contact</a></li>
       <li><a href="../privacy-policy.html">Privacy Policy</a></li>
       <li><a href="../terms.html">Terms</a></li>
@@ -212,14 +255,17 @@ footer{background:var(--ink);padding:48px 56px 28px}
     <div style="display:flex;gap:20px">
       <a href="../privacy-policy.html">Privacy</a>
       <a href="../terms.html">Terms</a>
-      <a href="../blog.html">Blog</a>
+      <a href="blog.html">Blog</a>
     </div>
   </div>
 </footer><script>
-function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
-function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+function openMobileNav(){var n=document.getElementById('mobileNav');n.style.display='flex';requestAnimationFrame(function(){n.classList.add('open')});document.body.style.overflow='hidden';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','true');}
+function closeMobileNav(){var n=document.getElementById('mobileNav');n.classList.remove('open');setTimeout(function(){n.style.display='none'},300);document.body.style.overflow='';document.querySelector('.hamburger')&&document.querySelector('.hamburger').setAttribute('aria-expanded','false');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav();});
+window.addEventListener('scroll',function(){var b=document.getElementById('btt');if(b){b.classList.toggle('show',window.scrollY>400);}});
 const _obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');_obs.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
 </script>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">&#8679;</button>
 </body>
 </html>
